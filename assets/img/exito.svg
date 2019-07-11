@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 37 0 37 37 0 37"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Enviar-Simulación-Por-Mail-Exito" transform="translate(-334.000000, -291.000000)">
+            <g id="Group-2" transform="translate(296.000000, 232.000000)">
+                <g id="Group-3" transform="translate(38.000000, 59.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M14.1138138,28.366524 L6.93602914,20.5767125 L9.16887998,18.154119 L14.1138138,23.5199106 L27.83112,8.63276281 L30.064684,11.0567827 L14.1138138,28.366524 Z M0,18.5 C0,28.7173972 8.28315633,37 18.5003566,37 C28.7175568,37 37,28.7173972 37,18.5 C37,8.28260283 28.7175568,0 18.5003566,0 C8.28315633,0 0,8.28260283 0,18.5 Z" id="Fill-1" fill="#7FB535" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

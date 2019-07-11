@@ -1,0 +1,1186 @@
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+    }
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  }
+
+html, body{
+
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+}
+
+
+  p.botoneras-p{
+    padding-left: 120%;
+    padding-top: 10%;
+  }
+
+
+  p.prestamo{
+      color: grey!important;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 4px;
+    top:2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #1D689E;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .horizontal-line{
+    width: auto; /* Line width */
+    background-color: grey; /* Line color */
+    height: 1px; /* Override in-line if you want specific height. */
+    float: auto; /* Causes the line to float to left of content. You can instead use position:absolute or display:inline-block if this fits better with your design */
+
+}
+.vertical-line{
+    width: 1px; /* Line width */
+    background-color: grey; /* Line color */
+    height: 320px; /* Override in-line if you want specific height. */
+    float: auto; /* Causes the line to float to left of content. You can instead use position:absolute or display:inline-block if this fits better with your design */
+
+}
+
+#number-container {
+  position: relative;
+}
+#number-container-symbol {
+  left: 5pt;
+  position: absolute;
+  top: -27px;
+}
+#number-field {
+  background-color: transparent;
+  padding-left: 10pt;
+}
+
+/*supergrid grid.layoutit.com*/
+.grid-container-sliders-componecre {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "numeroDeCuotas numeroDeCuotas componeCredito" "montoDelPrestamo montoDelPrestamo componeCredito" "valorCuotaMensual valorCuotaMensual componeCredito";
+  }
+
+  .componeCredito { grid-area: componeCredito; border-left: 2px solid grey;}
+
+  .numeroDeCuotas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "texto-Cuotas input-cuotas texto-fecha" "slider-numero-cuotas slider-numero-cuotas date-picker";
+    grid-area: numeroDeCuotas;
+  }
+
+  .texto-Cuotas { grid-area: texto-Cuotas; }
+
+  .input-cuotas { grid-area: input-cuotas; width: 30%; text-align: center;}
+
+  .texto-fecha { grid-area: texto-fecha; }
+
+  .slider-numero-cuotas { grid-area: slider-numero-cuotas; }
+
+  .date-picker { grid-area: date-picker; width: 80%;}
+
+  .montoDelPrestamo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "texto-monto-prestamo input-monto-del-prestamo input-monto-del-prestamo" "slider-monto-del-prestamo slider-monto-del-prestamo slider-monto-del-prestamo";
+    grid-area: montoDelPrestamo;
+  }
+
+  .texto-monto-prestamo { grid-area: texto-monto-prestamo; }
+
+  .input-monto-del-prestamo { grid-area: input-monto-del-prestamo; width: 4px; }
+
+  .slider-monto-del-prestamo { grid-area: slider-monto-del-prestamo; }
+
+  .valorCuotaMensual {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "texto-valor-cuota input-monto-cuota input-monto-cuota" "slider-valor-cuota slider-valor-cuota slider-valor-cuota";
+    grid-area: valorCuotaMensual;
+  }
+
+  .texto-valor-cuota { grid-area: texto-valor-cuota; }
+
+  .input-monto-cuota { grid-area: input-monto-cuota; }
+
+  .slider-valor-cuota { grid-area: slider-valor-cuota; }
+
+  /**Botoneras switcheables*/
+
+  .grid-container-botoneras {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "botoneraSwitch botoneraSwitch botoneraSwitch ." ". . . ." ". . . .";
+  }
+
+  .botoneraSwitch {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "desgravamen proteccion-laboral vida-doble-capital" "desgravamen proteccion-laboral vida-doble-capital";
+    grid-area: botoneraSwitch;
+  }
+
+  .desgravamen { grid-area: desgravamen; }
+
+  .proteccion-laboral { grid-area: proteccion-laboral; }
+
+  .vida-doble-capital { grid-area: vida-doble-capital; }
+
+  /**Footer alternativas fin*/
+
+  .grid-container {
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "alternativasFinan alternativasFinan . ." ". . . ." ". . . .";
+  }
+
+  .alternativasFinan {
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "titulo titulo titulo" "descipcionFinan descipcionFinan btnSimular";
+    grid-area: alternativasFinan;
+    background-color: rgb(220,220,220);
+    height: auto;
+    width: auto;
+  }
+
+  .titulo { grid-area: titulo; padding-left: 10%; color: rgb(63, 61, 61)!important; }
+
+  .descipcionFinan { grid-area: descipcionFinan; height: 70px; width: 100%;}
+
+  .btnSimular { grid-area: btnSimular; text-align: right; box-align: center;}
+
+
+  /*BOTONES CONTACTO*/
+
+  .queMeContacten {
+    -moz-box-shadow:inset 0px -3px 7px 0px #163da8;
+    -webkit-box-shadow:inset 0px -3px 7px 0px #163da8;
+    box-shadow:inset 0px -3px 7px 0px #163da8;
+    background-color:#1c448a;
+    border:1px solid #0c3ed4;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 53px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #1a50ba;
+  }
+  .queMeContacten:hover {
+    /*background-color: #0c3ed4;*/
+  }
+  .queMeContacten:active {
+    position:relative;
+    top:1px;
+  }
+
+  /*Enviar simulacion*/
+
+    .enviarSimulacion {
+    -moz-box-shadow:unset 0px -3px 7px 0px #163da8;
+    -webkit-box-shadow:unset 0px -3px 7px 0px #163da8;
+    box-shadow:unset 0px -3px 7px 0px #163da8;
+    background-color:white;
+    border:1px solid #0c4387;
+    display:inline-block;
+    cursor:pointer;
+    color:#0c4387;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 53px;
+    text-decoration:none;
+
+  }
+  .enviarSimulacion:hover {
+    /*background-color:#0c4387;*/
+  }
+  .enviarSimulacion:active {
+    position:relative;
+    top:1px;
+  }
+
+    .color img{
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -webkit-transition: all 1s ease;
+      }
+
+      .color img:hover{
+      filter: grayscale(0%);
+      filter: gray;
+      -webkit-filter: grayscale(0%);
+      filter: none;
+      transition: 1s ease;
+      }
+
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30%;
+        width: 100%;
+        transition: .5s ease;
+        background-color: #FFFFFF;
+
+      }
+
+      .overlayContact {
+        position: absolute;
+        top: 1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 35%;
+        width: 100%;
+        transition: .5s ease;
+        background-color: #FFFFFF;
+        opacity:0.7;
+      }
+
+      #menu1:hover .overlay {
+        opacity: 1;
+        background-color: #1D689E;
+      }
+
+      #menu2:hover .overlay {
+        opacity: 1;
+        background-color: #1D689E;
+      }
+
+      .activeApp img{
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        -webkit-transition: all 1s ease;
+      }
+
+      .activeApp .overlay{
+        opacity: 1;
+        background-color: #1D689E;
+      }
+
+      .activeApp .textOverlay {
+        color:white;
+      }
+
+      #menu1:hover .textOverlay {
+        opacity: 1;
+        color:white;
+      }
+
+      #menu2:hover .textOverlay {
+        opacity: 1;
+        color:white;
+      }
+
+      .textOverlay {
+        color: black;
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .textOverlayBotonCerrar {
+        color: black;
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .textOverlayContact {
+        color: black;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color:#1D689E;
+      }
+
+      @media all and (max-width: 992px) {
+        .textOverlayContact {
+          color: black;
+          font-size: 17px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+          color:#1D689E;
+        }
+      }
+
+      .inputVerde{
+        text-align:right;
+        border: 2px solid #C8DA40;
+        font-weight: bold;
+      }
+
+      .tamanoLetraMenu{
+        font-size:15px;
+        font-weight: light
+      }
+
+
+      @media all and (min-width: 640px) {
+        .borderBlueMenu{
+          border-bottom: 2px solid #1D689E;
+        }
+      }
+
+      .closeBoton{
+        position: absolute;
+        color:black;
+        padding-top:1%;
+        padding-left:97%;
+        cursor:pointer;
+      }
+
+      @media all and (max-width: 510px) {
+        .closeBoton{
+          position: absolute;
+          color:black;
+          padding-top:1%;
+          padding-left:95%;
+          cursor:pointer;
+        }
+      }
+
+      .form-control{
+        height:35px!important;
+      }
+
+
+
+      .anchoBotonera{
+        padding-left: 15px;
+        padding-right:0px
+      }
+
+      .arregloTasa{
+        margin-left: 0px;
+      }
+
+      .arregloCae{
+        padding-left:0px;
+      }
+
+      
+
+      @media all and (min-width: 1200px) {
+
+        .espacioEntreBotonera{
+         
+        }
+
+        .sombraCaja{
+          box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .borde-cajas-ver-simulacion{
+          
+        }
+
+        .borde-cajas-valor-propiedad{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-monto-credito{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-plazo{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .padding-resumen-casa{
+          border: 1.5px solid #D3D6D4;
+          margin-left: 15px;
+        }
+
+        .mismoAlto {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display:         flex;
+          margin-top:8px;
+        }
+        .arregloTasa{
+          margin-left: -10px;
+        }
+
+        .arregloCae{
+          padding-left:0px;
+        }
+
+        .anchoCajaResumenIzq{
+          border: 2px solid #D3D6D4;
+          padding-bottom:2.5%
+        }
+
+        .anchoCajaResumen{
+          margin-left:0px;
+          /*padding-bottom:3.2%*/
+          height: 100%;
+        }
+
+        .tamanoResumenCostoTotal{
+          color:#AAB00A;
+          font-size: 14px;
+          margin-left:10%;
+          margin-top:10%
+        }
+
+        .tamanoMontoCostoTotal{
+          color:#AAB00A;
+          font-weight: bold;
+          font-size: 19.52px;
+          margin-left:10%;
+          margin-top:-10px
+        }
+
+        .margenAuto{
+          margin-left:20%;
+          margin-top:25%
+        }
+
+        .tamanoLetraTasaMensual{
+          font-size:14px;
+          color:#00548E
+        }
+
+        .paddingSelect{
+          padding-right:0px;
+        }
+
+        .tamanoLetraSelect{
+          border: 2px solid #D3D6D4;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        .formatoCajaTipoCredito{
+          background-color:#F4F4F3;
+          border: 2px solid #D3D6D4;
+          margin-top:8px
+        }
+
+        .cajaCaePadding{
+          padding-left:0px;
+        }
+
+        .cajaValorPadding{
+          padding-left:0px;
+        }
+
+        .bordeCajaResumen{
+          border: 2px solid #D3D6D4;
+        }
+      }
+
+      @media all and (min-width: 991px) and (max-width: 1200px) {
+
+        .espacioEntreBotonera{
+         
+        }
+
+        .sombraCaja{
+          box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .borde-cajas-ver-simulacion{
+          
+        }
+
+        .borde-cajas-valor-propiedad{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-monto-credito{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-plazo{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .padding-resumen-casa{
+          border: 1.5px solid #D3D6D4;
+          margin-left: 15px;
+        }
+
+        .mismoAlto {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display:         flex;
+          margin-top:8px;
+        }
+
+        .arregloTasa{
+          margin-left: -15px;
+        }
+
+        .arregloCae{
+          padding-left:0px;
+        }
+
+        .anchoCajaResumenIzq{
+          border: 2px solid #D3D6D4;
+          padding-bottom:5.8%
+        }
+
+        .anchoCajaResumen{
+          margin-left:0px;
+          /*padding-bottom:3.2%*/
+          height: 100%;
+        }
+
+        .tamanoResumenCostoTotal{
+          color:#AAB00A;
+          font-size: 14px;
+          margin-left:2%;
+          margin-top:10%
+        }
+
+        .tamanoMontoCostoTotal{
+          color:#AAB00A;
+          font-weight: bold;
+          font-size: 19.52px;
+          margin-left:2%;
+          margin-top:-10px
+        }
+
+        .margenAuto{
+          margin-left:0%;
+          margin-top:25%
+        }
+
+        .tamanoLetraTasaMensual{
+          font-size:14px;
+          color:#00548E
+        }
+
+        .paddingSelect{
+          padding-right:0px;
+        }
+
+        .tamanoLetraSelect{
+          border: 2px solid #D3D6D4;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        .formatoCajaTipoCredito{
+          background-color:#F4F4F3;
+          border: 2px solid #D3D6D4;
+          margin-top:8px
+        }
+
+        .cajaCaePadding{
+          padding-left:0px;
+        }
+
+        .cajaValorPadding{
+          padding-left:0px;
+        }
+
+        .bordeCajaResumen{
+          border: 2px solid #D3D6D4;
+        }
+      }
+
+      @media all and (min-width: 768px) and (max-width: 991px) {
+
+        .espacioEntreBotonera{
+         
+        }
+
+        .sombraCaja{
+          box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .borde-cajas-ver-simulacion{
+          
+        }
+
+        .borde-cajas-valor-propiedad{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-monto-credito{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-plazo{
+          border: 1.5px solid #D3D6D4;
+        }
+
+        .padding-resumen-casa{
+          border: 1.5px solid #D3D6D4;
+          margin-left: 15px;
+        }
+
+        .mismoAlto {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display:         flex;
+          margin-top:8px;
+        }
+
+        .arregloTasa{
+          margin-left: -15px;
+        }
+
+        .arregloCae{
+          padding-left:0px;
+          padding-right:0px;
+        }
+
+        .anchoCajaResumenIzq{
+          border: 2px solid #D3D6D4;
+          padding-bottom:6%
+        }
+
+        .anchoCajaResumen{
+          margin-left:0px;
+          /*padding-bottom:1.7%*/
+          height: 100%;
+        }
+        .tamanoResumenCostoTotal{
+          color:#AAB00A;
+          font-size: 10px;
+          margin-left:0%;
+          margin-top:10%
+        }
+
+        .tamanoMontoCostoTotal{
+          color:#AAB00A;
+          font-weight: bold;
+          font-size: 19.52px;
+          margin-left:0%;
+          margin-top:-10px
+        }
+
+        .margenAuto{
+          margin-left:-50%;
+          margin-top:35%
+        }
+
+        .tamanoLetraTasaMensual{
+          font-size:12px;
+          color:#00548E
+        }
+
+        .paddingSelect{
+          padding-right:0px;
+        }
+
+        .tamanoLetraSelect{
+          border: 2px solid #D3D6D4;
+          font-weight: bold;
+          font-size: 11px;
+        }
+
+        .formatoCajaTipoCredito{
+          background-color:#F4F4F3;
+          border: 2px solid #D3D6D4;
+          margin-top:8px
+        }
+
+        .cajaCaePadding{
+          padding-left:0px;
+        }
+
+        .cajaValorPadding{
+          padding-left:0px;
+        }
+
+        .bordeCajaResumen{
+          border: 2px solid #D3D6D4;
+        }
+      }
+
+      @media all and (max-width: 767px) {
+
+        .espacioEntreBotonera{
+          margin-bottom: 10px;
+        }
+
+        .sombraCaja{
+          
+        }
+
+        .borde-cajas-ver-simulacion{
+          border-bottom: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-valor-propiedad{
+          border-top: 1.5px solid #D3D6D4;
+          border-bottom: 1.5px solid #D3D6D4;
+          background-color: #ECECEC;
+        }
+
+        .borde-cajas-monto-credito{
+          border-bottom: 1.5px solid #D3D6D4;
+        }
+
+        .borde-cajas-plazo{
+          
+        }
+
+        .borde-incluye{
+          border-bottom: 1.5px solid #D3D6D4;
+        }
+
+        .mismoAlto {
+          margin-top:8px;
+        }
+
+        .tamanoResumenCostoTotal{
+          color:#AAB00A;
+          font-size: 14px;
+          margin-left:5%;
+          margin-top:5%
+        }
+
+        .tamanoMontoCostoTotal{
+          color:#AAB00A;
+          font-weight: bold;
+          font-size: 19.52px;
+          margin-left:5%;
+          margin-top:-10px
+        }
+
+        .margenAuto{
+          margin-left:70%;
+          margin-top:10%
+        }
+
+        .formatoCajaTipoCredito{
+          background-color:#FFFFFF;
+          border: 0px solid #D3D6D4;
+          margin-top:8px
+        }
+
+        .cajaCaePadding{
+          padding-left:15px;
+        }
+
+        .tamanoLetraTasaMensual{
+          font-size:14px;
+          color:#00548E
+        }
+
+        .cajaValorPadding{
+          padding-left:15px;
+        }
+
+        .bordeCajaResumen{
+          border: 0px solid #D3D6D4;
+        }
+      }
+
+      @media all and (max-width: 600px) {
+        .margenAuto{
+          margin-left:40%;
+          margin-top:15%
+        }
+      }
+
+      @media all and (max-width: 500px) {
+        .margenAuto{
+          margin-left:20%;
+          margin-top:20%
+        }
+
+        .tamanoResumenCostoTotal{
+          color:#AAB00A;
+          font-size: 12.3px;
+          margin-left:0%;
+          margin-top:10%
+        }
+
+        .tamanoMontoCostoTotal{
+          color:#AAB00A;
+          font-weight: bold;
+          font-size: 19.52px;
+          margin-left:0%;
+          margin-top:-10px
+        }
+      }
+
+      @media all and (max-width: 358px) {
+        .tamanoResumenCostoTotal{
+          color:#AAB00A;
+          font-size: 12.3px;
+          margin-left:-4%;
+          margin-top:10%
+        }
+
+        .tamanoMontoCostoTotal{
+          color:#AAB00A;
+          font-weight: bold;
+          font-size: 19.52px;
+          margin-left:-4%;
+          margin-top:-10px
+        }
+
+        .margenAuto{
+          margin-left:30%;
+          margin-top:20%
+        }
+      }
+
+      @media all and (max-width: 345px) {
+        .tamanoLetraTasaMensual{
+          font-size:12.8px;
+          color:#00548E
+        }
+        .margenAuto{
+          margin-left:20%;
+          margin-top:20%
+        }
+      }
+
+      .ancho2{
+        padding-left:8px;
+      }
+
+      @media all and (max-width: 640px) {
+        .ancho2{
+          padding-left:0px;
+        }
+        .tamanoLetraMenu{
+          font-size:12px;
+          font-weight: light
+        }
+
+        .overlay {
+          position: absolute;
+          top: 1;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 40%;
+          width: 100%;
+          transition: 0s ease;
+          background-color: #FFFFFF;
+
+        }
+
+      }
+
+      .tamanoAuto{
+        padding-left:40px
+      }
+
+      @media all and (max-width: 376px) {
+        .tamanoAuto{
+          padding-left:0px
+        }
+
+      }
+
+      @media all and (max-width: 640px) {
+
+        .formatoCajaTipoCredito{
+          background-color:#FFFFFF;
+          border: 0px solid #D3D6D4;
+          margin-top:8px
+        }
+      }
+
+
+
+
+      .checkbox {
+        padding-left: 20px; }
+        .checkbox label {
+          display: inline-block;
+          position: relative;
+          padding-left: 5px; }
+          .checkbox label::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            margin-left: -20px;
+            border: 1px solid #1D689E;
+            border-radius: 3px;
+            background-color: #fff;
+            -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+            -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+            transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
+          .checkbox label::after {
+            display: inline-block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 0;
+            margin-left: -20px;
+            padding-left: 3px;
+            padding-top: 1px;
+            font-size: 11px;
+            color: #555555; }
+        .checkbox input[type="checkbox"] {
+          opacity: 0; }
+          .checkbox input[type="checkbox"]:focus + label::before {
+            outline: thin dotted;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px; }
+          .checkbox input[type="checkbox"]:checked + label::after {
+            font-family: 'FontAwesome';
+            content: "\f00c"; }
+          .checkbox input[type="checkbox"]:disabled + label {
+            opacity: 0.65; }
+            .checkbox input[type="checkbox"]:disabled + label::before {
+              background-color: #eeeeee;
+              cursor: not-allowed; }
+        .checkbox.checkbox-circle label::before {
+          border-radius: 50%; }
+        .checkbox.checkbox-inline {
+          margin-top: 0; }
+
+      .checkbox-primary input[type="checkbox"]:checked + label::before {
+        background-color: #428bca;
+        border-color: #428bca; }
+      .checkbox-primary input[type="checkbox"]:checked + label::after {
+        color: #fff; }
+
+      .checkbox-danger input[type="checkbox"]:checked + label::before {
+        background-color: #d9534f;
+        border-color: #d9534f; }
+      .checkbox-danger input[type="checkbox"]:checked + label::after {
+        color: #fff; }
+
+      .checkbox-info input[type="checkbox"]:checked + label::before {
+        background-color: #1D689E;
+        border-color: #1D689E; }
+      .checkbox-info input[type="checkbox"]:checked + label::after {
+        color: #fff; }
+
+      .checkbox-warning input[type="checkbox"]:checked + label::before {
+        background-color: #f0ad4e;
+        border-color: #f0ad4e; }
+      .checkbox-warning input[type="checkbox"]:checked + label::after {
+        color: #fff; }
+
+      .checkbox-success input[type="checkbox"]:checked + label::before {
+        background-color: #5cb85c;
+        border-color: #5cb85c; }
+      .checkbox-success input[type="checkbox"]:checked + label::after {
+        color: #fff; }
+
+      .radio {
+        padding-left: 20px; }
+        .radio label {
+          display: inline-block;
+          position: relative;
+          padding-left: 5px; }
+          .radio label::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            left: 0;
+            margin-left: -20px;
+            border: 1px solid #1D689E;
+            border-radius: 50%;
+            background-color: #fff;
+            -webkit-transition: border 0.15s ease-in-out;
+            -o-transition: border 0.15s ease-in-out;
+            transition: border 0.15s ease-in-out; }
+          .radio label::after {
+            display: inline-block;
+            position: absolute;
+            content: " ";
+            width: 11px;
+            height: 11px;
+            left: 3px;
+            top: 3px;
+            margin-left: -20px;
+            border-radius: 50%;
+            background-color: #555555;
+            -webkit-transform: scale(0, 0);
+            -ms-transform: scale(0, 0);
+            -o-transform: scale(0, 0);
+            transform: scale(0, 0);
+            -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+            -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+            -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+            transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
+        .radio input[type="radio"] {
+          opacity: 0; }
+          .radio input[type="radio"]:focus + label::before {
+            outline: thin dotted;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px; }
+          .radio input[type="radio"]:checked + label::after {
+            -webkit-transform: scale(1, 1);
+            -ms-transform: scale(1, 1);
+            -o-transform: scale(1, 1);
+            transform: scale(1, 1); }
+          .radio input[type="radio"]:disabled + label {
+            opacity: 0.65; }
+            .radio input[type="radio"]:disabled + label::before {
+              cursor: not-allowed; }
+        .radio.radio-inline {
+          margin-top: 0; }
+
+      .radio-primary input[type="radio"] + label::after {
+        background-color: #428bca; }
+      .radio-primary input[type="radio"]:checked + label::before {
+        border-color: #428bca; }
+      .radio-primary input[type="radio"]:checked + label::after {
+        background-color: #428bca; }
+
+      .radio-danger input[type="radio"] + label::after {
+        background-color: #d9534f; }
+      .radio-danger input[type="radio"]:checked + label::before {
+        border-color: #d9534f; }
+      .radio-danger input[type="radio"]:checked + label::after {
+        background-color: #d9534f; }
+
+      .radio-info input[type="radio"] + label::after {
+        background-color: #1D689E; }
+      .radio-info input[type="radio"]:checked + label::before {
+        border-color: #1D689E; }
+      .radio-info input[type="radio"]:checked + label::after {
+        background-color: #1D689E; }
+
+      .radio-warning input[type="radio"] + label::after {
+        background-color: #f0ad4e; }
+      .radio-warning input[type="radio"]:checked + label::before {
+        border-color: #f0ad4e; }
+      .radio-warning input[type="radio"]:checked + label::after {
+        background-color: #f0ad4e; }
+
+      .radio-success input[type="radio"] + label::after {
+        background-color: #5cb85c; }
+      .radio-success input[type="radio"]:checked + label::before {
+        border-color: #5cb85c; }
+      .radio-success input[type="radio"]:checked + label::after {
+        background-color: #5cb85c; }
+
+        .row-flex {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        

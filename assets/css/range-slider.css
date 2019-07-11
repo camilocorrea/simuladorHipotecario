@@ -1,0 +1,144 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*body {
+  font-family: sans-serif;
+}*/
+
+.range-slider {
+  /**margin: 5% 0 0 0%;*/
+  padding-bottom: 10%;
+}
+
+.range-slider {
+  width: 70%;
+}
+
+.range-slider__range {
+  -webkit-appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  background: #5189B4;
+  outline: none;
+  margin: auto;
+  /*overflow: hidden;*/
+}
+
+.range-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #5189B4;
+  cursor: pointer;
+  /*box-shadow: -101vw 0 0 100vw #9FB138;*/
+}
+
+.range-slider__range::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #5189B4;
+  cursor: pointer;
+}
+
+.range-slider__value {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  color: #fff;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: #5189B4;
+  padding: 5px 10px;
+  margin-left: 8px;
+}
+.range-slider__value:after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #2c3e50;
+  border-bottom: 7px solid transparent;
+  content: '';
+}
+
+.range-slider__value::-moz-range-track {
+  background: #5189B4;
+  border: 0;
+}
+
+input::-moz-focus-inner, input::-moz-focus-outer {
+  border: 0;
+}
+
+.range-slider__range::-webkit-slider-thumb:hover {
+  background: #5189B4;
+  }
+.range-slider__range:active::-webkit-slider-thumb {
+  background: #5189B4;
+  }
+.range-slider__range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #5189B4;
+    }
+
+  .range-slider__range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #5189B4;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+
+  }
+  .range-slider__range::-moz-range-thumb:hover {
+  background: #5189B4;
+  }
+  .range-slider__range:active::-moz-range-thumb {
+  background: #5189B4;
+  }
+  .range-slider__range:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #5189B4;
+    }
+
+
+
+
+
+/*daldsahkjadshkjdashkjasdasd*/
+
+
+.range-slider__range::-ms-track {
+  height: 5px;
+
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: none!important;
+
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent!important;
+  border-width: 6px 0;
+
+  /*remove default tick marks*/
+  color: transparent;
+  }
+  .range-slider__range::-ms-fill-lower {
+  background: #9FB138;
+  border-radius: 10px;
+  }
+
+  .range-slider__range::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 10px;
+  }
+  .range-slider__range::-ms-thumb {
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  }
